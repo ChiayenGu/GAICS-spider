@@ -1,0 +1,1 @@
+from NextPageButtonExtractor.handler.extractor import process as button_extractor

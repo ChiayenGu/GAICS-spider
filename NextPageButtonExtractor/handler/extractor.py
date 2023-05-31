@@ -57,9 +57,10 @@ if __name__ == "__main__" :
     # print(real_path)
     # load_classifier()
     time1 = time.time()
-    text = '''<img src="../../images/ico_yellow.jpg" width="3" height="7" title="图片装饰" alt="图片装饰">'''
-    # text = '''<a class="n" href="/s?wd=%E6%90%9C%E7%B4%A2%E7%BB%93%E6%9E%9C&amp;pn=10&amp;oq=%E6%90%9C%E7%B4%A2%E7%BB%93%E6%9E%9C&amp;ie=utf-8&amp;usm=2&amp;rsv_pq=9ff114c100019241&amp;rsv_t=aba07Ltrd4bcj%2FNVsG1U5BF4CKZ7OSIdaGOXE0WRruJgB1rJhA%2FIPViWTns&amp;topic_pn=&amp;rsv_page=1" pcked="1">下一页 &gt;</a>'''
+    # text = '''<img src="../../images/ico_yellow.jpg" width="3" height="7" title="图片装饰" alt="图片装饰">'''
+    text = '''<a class="n" href="/s?wd=%E6%90%9C%E7%B4%A2%E7%BB%93%E6%9E%9C&amp;pn=10&amp;oq=%E6%90%9C%E7%B4%A2%E7%BB%93%E6%9E%9C&amp;ie=utf-8&amp;usm=2&amp;rsv_pq=9ff114c100019241&amp;rsv_t=aba07Ltrd4bcj%2FNVsG1U5BF4CKZ7OSIdaGOXE0WRruJgB1rJhA%2FIPViWTns&amp;topic_pn=&amp;rsv_page=1" pcked="1">下一页 &gt;</a>'''
     handler = ButtonExtractor(text)
     poss = handler.predictProbaButton()
+    res = handler.predictButton()
     Xpath = handler.getXpath()
-    logger.info(f'{text}的分数为: {poss},选择器为{Xpath}')
+    logger.info(f'{text}的分数为: {poss},判定为{res}，选择器为{Xpath}')
